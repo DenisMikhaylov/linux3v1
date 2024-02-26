@@ -39,6 +39,6 @@ user1$ cat /etc/shadow
 # cat /var/log/audit/audit.log
 
 # ausearch -f /etc/passwd
-```
 
 # ausearch -k passwords-files
+```
