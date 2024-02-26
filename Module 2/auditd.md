@@ -64,8 +64,8 @@
 
 ```
 ...
--w /etc/passwd -p rwa -k passwords-files
--w /etc/shadow -p rwa -k passwords-files
+-w /etc/sudoers -p wa -k actions
+-w /etc/sudoers.d/ -p wa -k actions
 ```
 ```
 # service auditd restart
