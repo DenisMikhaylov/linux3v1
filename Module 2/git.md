@@ -37,3 +37,17 @@ git commit -m 'Add all file etc'
 ```
 git diff
 ```
+Создание альтернативного репозитария
+
+```
+git branch second
+```
+Просмотреть список репозитариев
+
+```
+git branch
+```
+Переключение между репозитариями
+```
+git checkout second
+```
