@@ -4,8 +4,9 @@
 # apt install portsentry
 ```
 Использование в режиме без блокировки
-
+```
 # cat /etc/portsentry/portsentry.conf
+```
 ```
 BLOCK_UDP="0"
 BLOCK_TCP="0"
