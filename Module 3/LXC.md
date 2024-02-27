@@ -10,9 +10,9 @@ LXC
 ```
 auto br0
 iface br0 inet static
-        address 192.168.X.10
+        address 192.168.10.10
         netmask 255.255.255.0
-        gateway 192.168.X.1
+        gateway 192.168.10.1
         bridge_ports enp0s3
 ```
 ```
