@@ -92,9 +92,9 @@ EXPOSE 80
 ENTRYPOINT ["/start.sh"]
 ```
 ```
-# docker build -t test/webd .
+# docker build -t test/webd1 .
 
-# docker history test/webd
+# docker history test/webd1
 ```
 Запуск в режиме демона и подключение к контейнеру
 ```
