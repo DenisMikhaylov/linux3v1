@@ -3,20 +3,11 @@
 ```
 # apt install fail2ban
 ```
+
 Настройка
 ```
-# cat /etc/fail2ban/jail.conf
-
-# ls /etc/fail2ban/jail.d/
-
-# cat /etc/fail2ban/jail.d/defaults-debian.conf
-
-# cat /etc/fail2ban/filter.d/sshd.conf
-
-# cat /etc/fail2ban/filter.d/asterisk.conf
-```
 # nano /etc/fail2ban/jail.local
-
+```
 ```
 [sshd]
 maxretry = 6
