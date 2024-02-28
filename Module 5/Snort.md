@@ -1,9 +1,10 @@
 Сервис SNORT
 
-Установка, настройка, запуск сервиса
+Установка , запуск сервиса
 ```
 server # apt install snort
 ```
+Настройка
 ```
 # nano /etc/snort/snort.debian.conf
 ```
