@@ -11,7 +11,7 @@
 ```
 [sshd]
 maxretry = 6
-#ignoreip = 192.168.X.0/24 192.168.100+X.0/24
+#ignoreip = 192.168.10.0/24 192.168.110.0/24
 ```
 ```
 # service fail2ban reload
