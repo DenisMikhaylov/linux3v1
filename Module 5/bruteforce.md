@@ -1,7 +1,8 @@
+Конфигурация для защиты от bruteforce
 
-Настройка iptable
+Создаем скрипт
 ```
-gate:~# cat firewall.sh
+# cat firewall.sh
 ```
 ```
 iptables --flush
@@ -12,6 +13,7 @@ iptables -A FORWARD -p tcp --dport 80 -i eth1 -m conntrack --ctstate NEW -m rece
 ...
 ```
 
+```
 root@gate:~# tail -f /var/log/syslog
 
 root@gate:~# cat /proc/net/xt_recent/DEFAULT
@@ -19,3 +21,13 @@ root@gate:~# cat /proc/net/xt_recent/DEFAULT
 root@gate:~# echo -10.5.7.1 >/proc/net/xt_recent/DEFAULT
 
 root@gate:~# echo / >/proc/net/xt_recent/DEFAULT
+```
+Мониторинг соединений
+
+```
+root@gate:~# conntrack -L
+
+root@gate:~# iptstate
+
+root@gate:~# conntrack -F
+```
