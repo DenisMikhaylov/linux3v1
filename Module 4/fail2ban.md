@@ -23,9 +23,5 @@ maxretry = 6
 ```
 # fail2ban-client status
 
-# fail2ban-client status asterisk
-
-# fail2ban-client set asterisk unbanip 172.16.1.150
-
 # tail -f /var/log/fail2ban.log
 ```
