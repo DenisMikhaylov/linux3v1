@@ -9,9 +9,15 @@
 # nano /etc/fail2ban/jail.local
 ```
 ```
-[sshd]
-maxretry = 6
-#ignoreip = 192.168.10.0/24 192.168.110.0/24
+[ssh]
+enabled = true
+port     = ssh
+filter = sshd
+action = iptables[name=sshd, port=ssh, protocol=tcp]
+logpath = /var/log/auth.log
+maxretry = 5
+findtime = 300
+bantime = 600
 ```
 ```
 # service fail2ban reload
