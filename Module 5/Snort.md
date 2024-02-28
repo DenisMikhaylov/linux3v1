@@ -9,7 +9,7 @@ server # apt install snort
 ```
 ```
 ...
-DEBIAN_SNORT_INTERFACE="eth2"
+DEBIAN_SNORT_INTERFACE="enp0s3"
 DEBIAN_SNORT_HOME_NET="192.168.0.0/16"
 ...
 ```
@@ -48,5 +48,5 @@ root@server:~# service snort restart
 
 Генерируем атаку
 
-http://192.168.X.10/root.exe
+http://192.168.10.10/root.exe
 
