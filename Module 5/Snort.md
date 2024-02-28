@@ -37,17 +37,22 @@ root@server:~# service snort restart
 Создание собственных правил snort
 
 ```
-#ls -l /etc/snort/rules
-#less /etc/snort/rules/web-iis.rules
+#nano /etc/snort/local.rules
 ```
-Тестирование
+```
+alert tcp any any -> any 80 (msg:"Directory traversal attempt"; flow:to_server; content:"../.."; nocase; reference:url,wiki.val.bmstu.ru; classtype:web-application-attack; sid:1000001; rev:1;)
+```
+тестирование
+```
+curl --path-as-is http://server.corpX.un/../../../etc/passwd
+
+```
+
+Просмотр настроек
 ```
 # less /etc/snort/rules/web-iis.rules
 
 # tail -f /var/log/auth.log | grep Red
 ```
 
-Генерируем атаку
-
-http://192.168.10.10/root.exe
 
