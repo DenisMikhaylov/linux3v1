@@ -1,5 +1,7 @@
 Сервис SNORT
 
+https://www.opennet.ru/base/sec/snort_ids.txt.html
+
 Установка , запуск сервиса
 ```
 server # apt install snort
