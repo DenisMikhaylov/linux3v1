@@ -23,7 +23,7 @@ $ nmap -p80 192.168.X.7-14
 ```
 Cканирование UDP портов портов системы
 ```
-# nmap -sU server.corpX.un
+# nmap -sU server
 ```
 Ping диапазона адресов с verbose и debug
 ```
