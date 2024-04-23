@@ -67,7 +67,7 @@
 ```
 Добавление правил для постоянного использования
 ```
-# cat /etc/audit/audit.rules
+# cat /etc/audit/rules.d/audit.rules
 ```
 
 ```
