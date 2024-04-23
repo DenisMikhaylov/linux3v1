@@ -92,5 +92,5 @@ ENTRYPOINT ["/start.sh"]
 ```
 Запуск в режиме демона и подключение к контейнеру
 ```
-server# docker run --name webd01 --hostname webd01 -itd -v /var/www/:/var/www/ -p 8000:80 test/webd /start.sh
+server# docker run --name webd01 --hostname webd01 -itd -v /var/www/:/var/www/ -p 8000:80 test/webd1 /start.sh
 ```
