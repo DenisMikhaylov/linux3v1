@@ -1,4 +1,5 @@
 LXC
+Подключаемся на server
 
 Подготовка родительской (host) системы
 ```
@@ -8,6 +9,8 @@ LXC
 ```
 Заменить настройки сетевого адаптера
 ```
+#enp0s3 все строки
+
 auto br0
 iface br0 inet static
         address 192.168.10.10
@@ -76,8 +79,8 @@ root@server:~# nano /var/lib/lxc/www/config
 lxc.net.0.type = veth
 lxc.net.0.link = br0
 lxc.net.0.flags = up
-lxc.net.0.ipv4.address = 192.168.X.20/24
-lxc.net.0.ipv4.gateway = 192.168.X.1
+lxc.net.0.ipv4.address = 192.168.10.50/24
+lxc.net.0.ipv4.gateway = 192.168.10.1
 lxc.start.auto = 1
 
 root@server:~# lxc-ls -f
@@ -92,7 +95,7 @@ root@server:~# lxc-attach -n www -- ps ax
 
 root@server:~# lxc-attach -n www -- /bin/bash
 
-root@server:~# ssh 192.168.X.20
+root@server:~# ssh 192.168.10.50
 
 root@server:~# lxc-stop -n www
 
