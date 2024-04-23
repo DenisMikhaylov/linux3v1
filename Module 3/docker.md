@@ -66,6 +66,9 @@ else
 fi
 
 ```
+```
+chmod +x start.sh
+```
 Создание Dockerfile
 ```
 server# nano Dockerfile
