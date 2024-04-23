@@ -81,14 +81,8 @@ RUN cp /usr/share/zoneinfo/Etc/GMT-3 /etc/localtime \
 
 COPY start.sh /
 COPY webd /usr/local/sbin/webd
-### ADD www.tgz /var/
-
-### for helm readiness/liveness Probe 
-### COPY index.html /var/www/
 
 EXPOSE 80
-#ENV MYMODE=TEST
-
 ENTRYPOINT ["/start.sh"]
 ```
 ```
