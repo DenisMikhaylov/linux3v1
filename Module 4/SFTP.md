@@ -8,7 +8,7 @@ nano /etc/ssh/sshd_config
 ...
 Subsystem sftp internal-sftp
 ...
-Match group user1
+Match group demouser
        ChrootDirectory %h
        ForceCommand internal-sftp
 ```
