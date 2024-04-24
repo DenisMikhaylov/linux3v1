@@ -16,7 +16,11 @@ DEBIAN_SNORT_INTERFACE="enp0s3"
 DEBIAN_SNORT_HOME_NET="192.168.0.0/16"
 ...
 ```
-
+Просмотр списка существующих правил
+```
+ls /etc/snort/rules
+less /etc/snort/rules/web-iis.rules
+```
 ```
 root@server:~# nano /etc/snort/snort.conf
 ```
