@@ -15,9 +15,17 @@ nano /etc/portsentry/portsentry.conf
 BLOCK_UDP="0"
 BLOCK_TCP="0"
 ```
+Анализ лога
 ```
 tail -f /var/log/syslog
 ```
+На хосте запускаем команду
+```
+telnet <ip address gate> 143
+```
+Смотрим что отображает лог
+
+
 Включение блокировки
 ```
 nano /etc/portsentry/portsentry.conf
@@ -26,8 +34,25 @@ nano /etc/portsentry/portsentry.conf
 ...
 BLOCK_UDP="1"
 BLOCK_TCP="1"
+KILL_ROUTE=/sbin/route фвв -host $TARGET$ reject
 ...
 ```
+```
+systemctl restart portsentry
+```
+На хосте запускаем команду
+```
+telnet <ip address gate> 143
+```
+
+На  gate проверяем
+```
+ip r
+```
+```
+/sbin/route del -host <ip address block> reject
+```
+
 Блокировка с использованием libwrap
 
 Включена по умолчанию
