@@ -4,52 +4,29 @@
 # apt install fail2ban
 ```
 
-Настройка для ssh
+Просмотр настроек
 ```
-# nano /etc/fail2ban/jail.local
+nano /etc/fail2ban/jail.conf
+```
+Просмотр фильтрации настроек SSH
+```
+nano /etc/fail2ban/filter.d/sshd.conf
+```
+Проверка включения ssh
+```
+nano /etc/fail2ban/jail.d/defaults-debian.conf
+```
+Настройка
+```
+nano /etc/fail2ban/jail.local
+```
+```
+[sshd]
+maxretry = 6 #кол-во попыток
 ```
 
 ```
-[sshd]
-enabled = true
-port     = ssh
-filter = sshd
-action = iptables[name=sshd, port=ssh, protocol=tcp]
-logpath = /var/log/auth.log
-maxretry = 5
-findtime = 300
-bantime = 600
-```
-Настройка для nginx
-```
-# nano /etc/fail2ban/jail.local
-```
-```
-[nginx-req-limit]
-enabled = true
-filter = nginx-req-limit
-action = iptables-multiport[name=ReqLimit, port="http,https", protocol=tcp]
-logpath = /var/log/nginx/*error.log
-findtime = 600
-bantime = 7200
-maxretry = 10
-```
-Настройка для asterisk
-```
-# nano /etc/fail2ban/jail.local
-```
-```
-[asterisk]
-enabled = true
-action = iptables-allports[name=asterisk, protocol=all]
-logpath = /var/log/asterisk/messages
-bantime = 86400
-```
-```
 # systemctl restart fail2ban
-```
-```
-# tail -f /var/log/fail2ban.log
 ```
 Мониторинг и управление
 
@@ -60,5 +37,6 @@ bantime = 86400
 ```
 Для удаления адреса из списка вводим:
 ```
-fail2ban-client set <имя правила> unbanip
+fail2ban-client set <имя правила> unbanip <ip>
+fail2ban-client set sshd unbanip <ip>
 ```
