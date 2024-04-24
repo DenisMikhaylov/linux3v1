@@ -13,8 +13,8 @@ nano /etc/apache2/sites-available/default-ssl*
 ```
 ```
 ...
-       SSLCertificateFile    /root/server.crt
-       SSLCertificateKeyFile /root/server.key
+       SSLCertificateFile    /root/www.crt
+       SSLCertificateKeyFile /root/www.key
 ...
 ```
 
