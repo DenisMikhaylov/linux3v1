@@ -34,7 +34,7 @@ nano /etc/portsentry/portsentry.conf
 ...
 BLOCK_UDP="1"
 BLOCK_TCP="1"
-KILL_ROUTE=/sbin/route фвв -host $TARGET$ reject
+KILL_ROUTE=/sbin/route add -host $TARGET$ reject
 ...
 ```
 ```
