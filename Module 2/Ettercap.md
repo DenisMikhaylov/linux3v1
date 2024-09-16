@@ -9,13 +9,13 @@ nano /etc/hosts
 ```
 127.0.1.1 server.corp.ru server
 ```
-
+Установка FTP 
 ```
 root@server:~# apt install proftpd-basic
 
 ```
 
-Утилита ettercap
+Утилита ettercap на LAN
 
 Установка
 
