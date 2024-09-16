@@ -3,6 +3,14 @@
 Установка и запуск сервиса
 
 ```
+nano /etc/hosts
+```
+Заменить
+```
+127.0.1.1 server.corp.ru server
+```
+
+```
 root@server:~# apt install proftpd-basic
 
 ```
