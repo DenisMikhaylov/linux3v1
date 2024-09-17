@@ -7,7 +7,7 @@ apt install libpam-cracklib
 
 или
 
-apt installlibpam-pwquality
+apt install libpam-pwquality
 ```
 
 Настройка сложности пароля
