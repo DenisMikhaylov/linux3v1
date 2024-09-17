@@ -3,7 +3,11 @@ PAM Module
 Установка PAM модуля для управляения паролем пользователя
 
 ```
-apt-get install libpam-cracklib
+apt install libpam-cracklib
+
+или
+
+apt installlibpam-pwquality
 ```
 
 Настройка сложности пароля
