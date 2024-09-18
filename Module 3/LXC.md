@@ -16,7 +16,7 @@ iface br0 inet static
         address 192.168.10.10
         netmask 255.255.255.0
         gateway 192.168.10.1
-        bridge_ports enp0s3
+        bridge_ports eth0
 ```
 ```
 root@server:~# init 0
