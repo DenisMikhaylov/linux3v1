@@ -12,7 +12,7 @@ server # apt install snort
 ```
 ```
 ...
-DEBIAN_SNORT_INTERFACE="enp0s3"
+DEBIAN_SNORT_INTERFACE="eth0"
 DEBIAN_SNORT_HOME_NET="192.168.0.0/16"
 ...
 ```
