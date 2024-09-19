@@ -39,3 +39,7 @@ snort -V
 ```
 https://www.zenarmor.com/docs/linux-tutorials/how-to-install-and-configure-snort-on-ubuntu-linux#3--download-and-install-snort-from-source-code
 ```
+Debian
+```
+https://upcloud.com/resources/tutorials/installing-snort-on-debian
+```
