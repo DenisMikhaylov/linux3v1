@@ -124,3 +124,15 @@ ca ca.crt
 cert user1.crt
 key user1.key
 ```
+или
+
+```
+dev tun
+port 1194
+proto udp
+client
+remote <ip address gate ext>
+ca c:\\ full path с \\ символом ca.crt
+cert c:\\ full path с \\ символом user1.crt
+key c:\\ full path с \\ символом user1.key
+```
