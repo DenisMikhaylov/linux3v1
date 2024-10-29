@@ -74,7 +74,7 @@ App Armor
 Создание профиля автоматически при помощи генерации для useradd
 
 ```
-# aa-genprof 
+# aa-genprof /usr/sbin/useradd
 ```
 просмотр созданного профиля.
 ```
