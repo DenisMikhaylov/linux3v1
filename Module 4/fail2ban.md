@@ -22,7 +22,7 @@ nano /etc/fail2ban/jail.local
 ```
 ```
 [sshd]
-maxretry = 6 #кол-во попыток
+maxretry = 6
 ```
 
 ```
