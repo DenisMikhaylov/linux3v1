@@ -115,7 +115,17 @@ systemctl restart networking
 ip a
 ip r
 ```
-18. Проверка связи
+
+18.  ОТредактиремай файл Resolve
+
+```
+nano /etc/resolv.conf
+```
+```
+nameserver 8.8.8.8
+```
+
+20. Проверка связи
 ```
 ping ya.ru
 ```
