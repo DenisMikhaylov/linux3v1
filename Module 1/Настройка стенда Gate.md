@@ -110,7 +110,7 @@ iface eth0 inet static
 address 192.168.10.1/24
 
 #WAN
-auto enp0s9
+auto enp0s8
 iface eth1 inet dhcp
 
 #LAN
@@ -194,8 +194,8 @@ ip r
 ```
 ```
 iptables -t nat --flush
-iptables -t nat -A POSTROUTING -o enp0s9 -s 192.168.10.0/24 -j MASQUERADE
-iptables -t nat -A POSTROUTING -o enp0s9 -s 192.168.100.0/24 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o enp0s8 -s 192.168.10.0/24 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o enp0s8 -s 192.168.100.0/24 -j MASQUERADE
 conntrack -F
 ```
 Запуск скрипта
