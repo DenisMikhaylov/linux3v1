@@ -194,8 +194,8 @@ ip r
 ```
 ```
 iptables -t nat --flush
-iptables -t nat -A POSTROUTING -o eth1 -s 192.168.10.0/24 -j MASQUERADE
-iptables -t nat -A POSTROUTING -o eth1 -s 192.168.100.0/24 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o enp0s9 -s 192.168.10.0/24 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o enp0s9 -s 192.168.100.0/24 -j MASQUERADE
 conntrack -F
 ```
 Запуск скрипта
