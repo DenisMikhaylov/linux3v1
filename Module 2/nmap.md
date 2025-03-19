@@ -38,13 +38,13 @@ student@debian:~$ su -
 ```
 Определение версии системы
 ```
-# nmap -v -A server
+# nmap -v -A 192.168.10.10
 
-# nmap -O server
+# nmap -O 192.168.10.10
 ```
 Cканирование TCP портов портов системы
 ```
-# nmap -PN- server
+# nmap -PN- 192.168.10.10
 
 # time nmap -O -p- ya.ru
 ```
@@ -54,7 +54,7 @@ $ nmap -p80 192.168.X.7-14
 ```
 Cканирование UDP портов портов системы
 ```
-# nmap -sU server
+# nmap -sU 192.168.10.10
 ```
 Ping диапазона адресов с verbose и debug
 ```
