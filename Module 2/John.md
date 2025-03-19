@@ -21,9 +21,32 @@ password: Pa55w.rd
 
 ### **Задача 1: Установка и использование John**
 
+Подключиться по SSH к виртуальной машине gate
+
+Получите права супер пользователя.
+
 ```
-# apt install john
-$ apt install wget
+student@debian:~$ su -
+```
+```
+< Введите пароль пользователя student >
+```
+
+Создать пользователя с логином demouser и паролем 111
+
+Получите права супер пользователя.
+
+```
+student@debian:~$ su -
+```
+```
+< Введите пароль пользователя student >
+```
+
+
+```
+apt install john
+apt install wget
 ```
 
 Тест
@@ -33,16 +56,16 @@ john --test
 
 Поиск паролей перебором
 ```
-# john --format=crypt /etc/shadow
+john --format=crypt /etc/shadow
 ```
 Поиск паролей по словарю
 
 
 Скачиваем словарь паролей из интернета
 ```
-# wget https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt
+wget https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt
 ```
 Запускаем перебор паролей
 ```
-# john --wordlist=/root/10-million-password-list-top-1000000.txt --format=crypt /etc/shadow
+john --wordlist=/root/10-million-password-list-top-1000000.txt --format=crypt /etc/shadow
 ```
