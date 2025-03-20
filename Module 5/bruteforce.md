@@ -8,8 +8,8 @@ LOG
 ```
 iptables --flush
 ...
-iptables -A FORWARD -p tcp --dport 80 -i eth1 -m conntrack --ctstate NEW -m recent --set
-iptables -A FORWARD -p tcp --dport 80 -i eth1 -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 4 -j LOG
+iptables -A FORWARD -p tcp --dport 80 -i enp0s8 -m conntrack --ctstate NEW -m recent --set
+iptables -A FORWARD -p tcp --dport 80 -i enp0s8 -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 4 -j LOG
 ...
 ```
 DROP
