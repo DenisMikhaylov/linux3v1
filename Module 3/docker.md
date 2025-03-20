@@ -29,7 +29,85 @@ server# docker run -it --name webd --hostname webd debian bash
 webd# apt update && apt install file procps nano
 ```
 Создание сервиса inetd как в module 1
+Установка ПО INETD 
+```
+# apt install inetutils-inetd
+```
+Настройка файла конфигурации
+```
+# nano /etc/inetd.conf
+```
+Добавить строку 
+```
+www stream tcp nowait root /usr/local/sbin/webd webd
+```
+Запуск сервиса 
+```
+# service inetutils-inetd restart
+```
+создание скрипта сервиса
+```
+# nano /usr/local/sbin/webd
+```
+вставить
+```
+#!/bin/bash
+base=/var/www
+#log=/var/log/webd.log
 
+read request
+##echo "$request" >> $log       # for educational demonstration
+
+filename="${request#GET }"
+filename="${filename% HTTP/*}"
+
+test $filename = "/" && filename="/index.html"
+
+filename="$base$filename"
+
+while :
+do
+  read -r header
+##  echo "$header" >> $log       # for educational demonstration
+  [ "$header" == $'\r' ] && break;
+##  [ "$header" == $'' ] && break;    # for STDIN/STDOUT educational demonstration
+done
+
+if [ -e "$filename" ]
+then
+#  echo `date` OK $filename on `hostname` >> $log
+  echo -e "HTTP/1.1 200 OK\r"
+  echo -e "Content-Type: $(/usr/bin/file -bi \"$filename\")\r"
+  echo -e "\r"
+  /bin/cat "$filename"
+else
+#  echo "$(date)" ERR $filename on "$(hostname)" >> $log
+  echo -e "HTTP/1.1 404 Not Found\r"
+  echo -e "Content-Type: text/html;\r"
+  echo -e "\r"
+  echo -e "<h1>File $filename Not Found</h1>"
+#  ip=$(awk '/32 host/ { print f } {f=$2}' /proc/net/fib_trie | sort -u | grep -v 127.0.0.1)
+#  echo -e "Host: $(hostname), IP: $ip, ver 1.1"
+fi
+```
+Настройка прав запуска на скрипт
+```
+# chmod +x /usr/local/sbin/webd
+```
+Настройка страницы приветствия для тестов.
+
+```
+# mkdir /var/www
+```
+```
+# nano /var/www/index.html
+```
+```
+<html>
+<h1>Hello Student</h1>
+</html>
+```
+Создание скрипта запуска
 ```
 webd/# nano start.sh
 ```
@@ -43,9 +121,22 @@ bash
 ```
 # chmod +x start.sh
 ```
+
 ```
 server# docker commit webd test/webd
 ```
+Запуск контейнера в режиме демона
+```
+docker run --name webd01 --hostname webd01 -itd -p 8000:80 test/webd /start.sh
+```
+Проверка работы контейнера
+
+```
+http://192.168.10.10:8000
+```
+
+
+
 Создание контейнера для приложения с использованием Dockerfile
 ```
 server# mkdir /root/webd/ && cd /root/webd/
