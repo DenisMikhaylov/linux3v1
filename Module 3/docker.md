@@ -211,11 +211,11 @@ EXPOSE 80
 ENTRYPOINT ["/start.sh"]
 ```
 ```
-# docker build -t test/webd1 .
+# docker build -t test/webd2 .
 
 # docker history test/webd1
 ```
 Запуск в режиме демона и подключение к контейнеру
 ```
-server# docker run --name webd01 --hostname webd01 -itd -v /var/www/:/var/www/ -p 8000:80 test/webd1 /start.sh
+server# docker run --name webd02 --hostname webd02 -itd  -p 8000:80 test/webd2
 ```
