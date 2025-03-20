@@ -165,10 +165,8 @@ http://192.168.10.10:8000/
 Создание контейнера для приложения с использованием Dockerfile
 ```
 server# mkdir /root/webd/ && cd /root/webd/
-
 server# cp /usr/local/sbin/webd .
-
-server# tar -cvzf www.tgz -C /var/ www/
+server# cp /var/www/index.html .
 ```
 ```
 server# nano start.sh
@@ -178,18 +176,11 @@ server# nano start.sh
 
 /etc/init.d/inetutils-inetd start
 
-touch /var/log/webd.log
-#chown 10003 /var/www/
-  
-if [ "$MYMODE" = 'TEST' ]; then
-  bash      # not work in k8s
-else
-  tail -f /var/log/webd.log
-fi
-
+bash
 ```
 ```
 chmod +x start.sh
+chmod +x webd
 ```
 Создание Dockerfile
 ```
@@ -202,10 +193,12 @@ RUN cp /usr/share/zoneinfo/Etc/GMT-3 /etc/localtime \
     && apt-get update \
     && apt-get install -y inetutils-inetd file \
     && apt-get clean \
-    && echo 'www stream tcp nowait root /usr/local/sbin/webd webd' > /etc/inetd.conf
+    && echo 'www stream tcp nowait root /usr/local/sbin/webd webd' > /etc/inetd.conf\
+    && mkdir /var/www
 
 COPY start.sh /
 COPY webd /usr/local/sbin/webd
+COPY index.html /var/www
 
 EXPOSE 80
 ENTRYPOINT ["/start.sh"]
