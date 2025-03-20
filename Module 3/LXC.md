@@ -65,6 +65,8 @@ root@server:/# PS1='www:\w# '
 ```
 ```
 www:/# apt install nano vim iputils-ping
+www:/# apt install apache2
+
 ```
 Настойка сетевых параметров дочерней системы
 ```
@@ -93,7 +95,13 @@ lxc.net.0.flags = up
 lxc.net.0.ipv4.address = 192.168.10.50/24
 lxc.net.0.ipv4.gateway = 192.168.10.1
 lxc.start.auto = 1
-
+lxc.cgroup2.cpuset.cpus = 0-0
+lxc.cgroup2.cpu.max = 10000 100000  #/sys/fs/cgroup/lxc.payload.www/cpu.max
+lxc.cgroup2.memory.max = 512M       
+lxc.cgroup2.memory.high = 512M      #/sys/fs/cgroup/lxc.payload.www/memory.high
+```
+Проверить список контейнеров
+```
 root@server:~# lxc-ls -f
 ```
 Запуск/мониторинг/остановка контейнера
