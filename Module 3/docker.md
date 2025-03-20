@@ -1,5 +1,10 @@
 Переходим на сайт docker и производим установку по новой схеме
 
+Установка Docker
+
+```
+apt install docker.io
+```
 
 Тестирование установки
 ```
@@ -23,7 +28,8 @@ server# docker run -it --name webd --hostname webd debian bash
 
 webd# apt update && apt install file procps nano
 ```
-Создание сервиса как в module 1
+Создание сервиса inetd как в module 1
+
 ```
 webd/# nano start.sh
 ```
