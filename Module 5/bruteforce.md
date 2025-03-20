@@ -14,7 +14,7 @@ iptables -A FORWARD -p tcp --dport 80 -i enp0s8 -m conntrack --ctstate NEW -m re
 ```
 DROP
 ```
-iptables -A FORWARD -p tcp --dport 80 -i eth1 -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 4 -j DROP
+iptables -A FORWARD -p tcp --dport 80 -i enp0s8 -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 4 -j DROP
 ```
 
 ```
