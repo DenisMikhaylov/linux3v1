@@ -106,16 +106,16 @@ address 192.168.100.1/24
 or
 # DMZ
 auto enp0s3
-iface eth0 inet static
+iface enp0s3 inet static
 address 192.168.10.1/24
 
 #WAN
 auto enp0s8
-iface eth1 inet dhcp
+iface enp0s8 inet dhcp
 
 #LAN
 auto enp0s9
-iface eth2 inet static
+iface enp0s9 inet static
 address 192.168.100.1/24  
 ```
 13. Изменить имя компьютера
