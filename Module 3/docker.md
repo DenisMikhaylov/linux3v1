@@ -134,9 +134,34 @@ docker run --name webd01 --hostname webd01 -itd -p 8000:80 test/webd /start.sh
 ```
 http://192.168.10.10:8000
 ```
+Анализ контейнера
 
+```
+docker inspect webd01
+```
+```
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' webd01 
+```
+```
+docker port webd01
+```
 
-
+Управление контейнером 
+```
+docker stop webd01
+```
+```
+docker inspect webd01
+```
+```
+ docker start webd01
+```
+```
+http://192.168.10.10:8000/
+```
+```
+ docker stop webd01 && docker rm webd01
+```
 Создание контейнера для приложения с использованием Dockerfile
 ```
 server# mkdir /root/webd/ && cd /root/webd/
