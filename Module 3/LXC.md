@@ -64,8 +64,6 @@ root@server:~# init 0
 root@server:/# PS1='www:\w# '
 ```
 ```
-www:/# apt purge isc-dhcp-client
-
 www:/# apt install nano vim iputils-ping
 ```
 Настойка сетевых параметров дочерней системы
@@ -75,7 +73,7 @@ www:/# nano /etc/hosts
 ```
 127.0.0.1       localhost
 
-192.168.X.20    www.corp
+192.168.10.20    www.corp
 ```
 Управление учетными записями в дочерней системе
 ```
