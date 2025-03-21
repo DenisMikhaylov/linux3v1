@@ -96,15 +96,20 @@ root@server:~# nano /var/lib/lxc/www/config
 ```
 ```
 lxc.net.0.type = veth
+lxc.net.0.hwaddr = 00:16:3e:7e:15:d8
 lxc.net.0.link = br0
-lxc.net.0.flags = up
 lxc.net.0.ipv4.address = 192.168.10.50/24
 lxc.net.0.ipv4.gateway = 192.168.10.1
 lxc.start.auto = 1
+lxc.net.0.flags = up
 lxc.cgroup2.cpuset.cpus = 0-0
-lxc.cgroup2.cpu.max = 10000 100000  #/sys/fs/cgroup/lxc.payload.www/cpu.max
-lxc.cgroup2.memory.max = 512M       
-lxc.cgroup2.memory.high = 512M      #/sys/fs/cgroup/lxc.payload.www/memory.high
+lxc.cgroup2.cpu.max = 10000 100000
+lxc.cgroup2.memory.max = 512M
+lxc.cgroup2.memory.high = 512M
+lxc.apparmor.profile = generated
+lxc.apparmor.allow_nesting = 1
+lxc.rootfs.path = dir:/var/lib/lxc/www/rootfs
+
 ```
 Проверить список контейнеров
 ```
