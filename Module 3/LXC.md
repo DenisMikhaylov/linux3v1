@@ -48,6 +48,12 @@ root@server:~# init 0
 ```
 #[ ! -f /etc/default/lxc-net ] || . /etc/default/lxc-net
 ```
+Просмотреть доступные шаблоны
+
+```
+lxc-create --template download --name demo
+```
+
 Создание ветки дочерней системы
 ```
 # lxc-create -t debian -n www
