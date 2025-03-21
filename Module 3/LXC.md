@@ -110,6 +110,8 @@ root@server:~# lxc-start -n www
 
 root@server:~# lxc-info -n www
 
+http://192.168.10.50 в браузере
+
 root@server:~# lxc-attach -n www -- ps ax
 
 root@server:~# lxc-attach -n www -- /bin/bash
