@@ -206,7 +206,7 @@ ENTRYPOINT ["/start.sh"]
 ```
 # docker build -t test/webd2 .
 
-# docker history test/webd1
+# docker history test/webd2
 ```
 Запуск в режиме демона и подключение к контейнеру
 ```
