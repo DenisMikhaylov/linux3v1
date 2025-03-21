@@ -8,7 +8,7 @@
 ```
 # apt install apache2
 ```
-Удаление index.html
+Удаление /var/www/html/index.html
 Проверка открытие сайта
 
 Создание центра сертификации
