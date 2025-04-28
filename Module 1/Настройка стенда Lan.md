@@ -124,7 +124,7 @@ ping ya.ru
 ```
 Указывается сетевой интерфейс для раздачи адресов
 ```
-INTERFACESv4="eth0"
+INTERFACESv4="enp0s3"
 
 ```
 
