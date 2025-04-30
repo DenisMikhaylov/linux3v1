@@ -35,6 +35,10 @@ maxretry = 6
 
 # tail -f /var/log/fail2ban.log
 ```
+Получить список ip забаненых
+```
+fail2ban-client get sshd banned
+```
 Для удаления адреса из списка вводим:
 ```
 fail2ban-client set <имя правила> unbanip <ip>
