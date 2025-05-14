@@ -102,8 +102,9 @@ iface eth1 inet dhcp
 auto eth2
 iface eth2 inet static
 address 192.168.100.1/24        
-
+```
 or
+```
 # DMZ
 auto enp0s3
 iface enp0s3 inet static
