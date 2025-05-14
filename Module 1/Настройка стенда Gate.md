@@ -184,6 +184,19 @@ ip r
 # sysctl -w net.ipv4.ip_forward=1
 ```
 3. Установка По для маршрутизации
+
+4. Проверка репозиториев
+
+```
+deb http://deb.debian.org/debian/ bullseye main
+deb-src http://deb.debian.org/debian/ bullseye main
+
+deb http://security.debian.org/debian-security bullseye-security main contrib
+deb-src http://security.debian.org/debian-security bullseye-security main contrib
+
+deb http://deb.debian.org/debian/ bullseye-updates main contrib
+deb-src http://deb.debian.org/debian/ bullseye-updates main contrib
+```
 ```
 # apt install iptables
 ```
