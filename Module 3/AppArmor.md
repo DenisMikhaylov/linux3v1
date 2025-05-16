@@ -2,8 +2,9 @@ App Armor
 
 Установка
 ```
-# apt install apparmor
-
+# apt install apparmor-utils -y
+```
+```
 # aa-status
 ```
 проверить профиля
