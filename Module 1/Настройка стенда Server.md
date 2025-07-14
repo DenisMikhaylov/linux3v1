@@ -137,7 +137,7 @@ ssh root@<ip address server >
 ```
 Проверка и корректировка репозитория.
 ```
-#nano /etc/apt/sources.list
+nano /etc/apt/sources.list
 ```
 Если строчка cdrom не закоментирована, удалить ее.
 ```
@@ -154,11 +154,14 @@ deb-src http://deb.debian.org/debian/ bullseye-updates main contrib
 
 Установка ПО INETD 
 ```
-# apt install inetutils-inetd
+apt update
+```
+```
+apt install inetutils-inetd
 ```
 Настройка файла конфигурации
 ```
-# nano /etc/inetd.conf
+nano /etc/inetd.conf
 ```
 Добавить строку 
 ```
