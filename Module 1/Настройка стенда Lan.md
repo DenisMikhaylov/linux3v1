@@ -72,6 +72,7 @@ student@debian:~$ su -
 # nano /etc/network/interfaces
 ```
 ```
+auto eер0
 iface eth0 inet static
         address 192.168.100.10
         netmask 255.255.255.0
@@ -79,6 +80,7 @@ iface eth0 inet static
 ```
 или
 ```
+auto enp0s3
 iface enp0s3 inet static
         address 192.168.100.10
         netmask 255.255.255.0
