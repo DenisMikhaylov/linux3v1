@@ -188,6 +188,9 @@ ip r
 4. Проверка репозиториев
 
 ```
+nano /etc/apt/sources.list
+```
+```
 deb http://deb.debian.org/debian/ bullseye main
 deb-src http://deb.debian.org/debian/ bullseye main
 
