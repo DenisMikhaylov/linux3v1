@@ -113,6 +113,24 @@ ping ya.ru
 
 Установка DHCP на Lan
 
+Проверка и корректировка репозитория.
+```
+nano /etc/apt/sources.list
+```
+Если строчка cdrom не закоментирована, удалить ее.
+```
+deb http://deb.debian.org/debian/ bullseye main
+deb-src http://deb.debian.org/debian/ bullseye main
+
+deb http://security.debian.org/debian-security bullseye-security main contrib
+deb-src http://security.debian.org/debian-security bullseye-security main contrib
+
+deb http://deb.debian.org/debian/ bullseye-updates main contrib
+deb-src http://deb.debian.org/debian/ bullseye-updates main contrib
+```
+```
+apt update
+```
 Установка приложения 
 ```
 # apt install isc-dhcp-server
