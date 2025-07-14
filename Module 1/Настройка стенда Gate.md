@@ -198,6 +198,9 @@ deb http://deb.debian.org/debian/ bullseye-updates main contrib
 deb-src http://deb.debian.org/debian/ bullseye-updates main contrib
 ```
 ```
+apt update
+```
+```
 # apt install iptables
 ```
 ```
