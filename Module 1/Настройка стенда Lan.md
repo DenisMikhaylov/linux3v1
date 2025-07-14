@@ -77,6 +77,7 @@ iface eth0 inet static
         netmask 255.255.255.0
         gateway 192.168.100.1
 ```
+или
 ```
 iface enp0s3 inet static
         address 192.168.100.10
