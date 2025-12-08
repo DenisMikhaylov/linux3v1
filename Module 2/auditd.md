@@ -34,8 +34,8 @@ student@debian:~$ su -
 
 Установка и запуск системы аудита
 
-```
-# apt install auditd
+```bash
+apt install auditd
 ```
 
 
@@ -45,7 +45,7 @@ student@debian:~$ su -
 
 Удаление всех правил
 ```
-# auditctl -D
+auditctl -D
 ```
 Добавление правил в рамках текущего
 
@@ -53,19 +53,27 @@ student@debian:~$ su -
 
 Отображение успешных и неудачных попыток чтения информации из записей аудита:
 ```
-# auditctl -w /var/log/audit/ -p wra -k auditlog
+auditctl -w /var/log/audit/ -p wra -k auditlog
 ```
 Отображение изменения конфигурации аудита, происходящей во время работы функций журналирования:
 ```
-# auditctl -w /etc/audit/ -p wra -k auditconfig 
-# auditctl -w /etc/libaudit.conf -p wra -k auditconfig
+auditctl -w /etc/audit/ -p wra -k auditconfig
+```
+```
+auditctl -w /etc/libaudit.conf -p wra -k auditconfig
 ```
 Отслеживание использования инструментов управления аудитом:
 ```
-# auditctl -w /sbin/auditctl -p x -k audittools 
-# auditctl -w /sbin/auditd -p x -k audittools 
-# auditctl -w /usr/sbin/auditd -p x -k audittools 
-# auditctl -w /usr/sbin/augenrules -p x -k audittoolss
+auditctl -w /sbin/auditctl -p x -k audittools
+```
+```
+auditctl -w /sbin/auditd -p x -k audittools
+```
+```
+auditctl -w /usr/sbin/auditd -p x -k audittools
+```
+```
+auditctl -w /usr/sbin/augenrules -p x -k audittoolss
 ```
 Фильтр событий большого объема:
 ```
