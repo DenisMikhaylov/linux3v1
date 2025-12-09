@@ -64,7 +64,11 @@ john --format=crypt /etc/shadow
 
 Скачиваем словарь паролей из интернета
 ```
-wget https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt
+https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials
+```
+Получите ссылку на raw
+```
+wget <link raw>
 ```
 Запускаем перебор паролей
 ```
