@@ -49,9 +49,11 @@ root@server:~# init 0
 #[ ! -f /etc/default/lxc-net ] || . /etc/default/lxc-net
 ```
 Просмотреть доступные шаблоны
+
 ```
 /usr/share/lxc/templates/lxc-download -l
 ```
+
 ```
 lxc-create --template download --name demo
 ```
