@@ -120,13 +120,14 @@ snort --daq-list
 sudo nano /usr/local/etc/snort/snort.lua
 ```
 
-Найдите блок `ips = { ... }`. Установите переменные:
 
+найдите и замените значения.
 ```lua
-HOME_NET = '192.168.1.0/24',  -- замените на вашу подсеть
-EXTERNAL_NET = '!$HOME_NET',
+HOME_NET = '192.168.1.0/24'  -- замените на вашу подсеть
+EXTERNAL_NET = '!$HOME_NET'
+RULE_PATH = '/usr/local/etc/snort/rules/
 ```
-
+Найдите блок `ips = { ... }`. 
 В том же блоке `ips` найдите параметр `rules` и добавьте подключение локальных правил:
 
 ```lua
