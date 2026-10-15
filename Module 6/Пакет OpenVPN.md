@@ -74,8 +74,8 @@ gate# nano /etc/openvpn/openvpn1.conf
 ```
 ```
 dev tun
-# port 1194
-# proto udp
+port 1194
+proto udp
 keepalive 10 120
 server 192.168.200.0 255.255.255.0
 push "route 192.168.110.0 255.255.255.0"
