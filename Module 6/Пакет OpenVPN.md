@@ -110,7 +110,7 @@ status /var/log/openvpn1-status.log
 
 Настройка клиента
 Windows
-
+Установить клиента openvpn
 ```
 C:\>notepad C:\Users\student\OpenVPN\config\user1.ovpn
 ```
